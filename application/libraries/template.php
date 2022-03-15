@@ -6,9 +6,14 @@ class Template{
     }
     
     function display($template,$data=null){
+        // $data['_content']=$this->_CI->load->view($template,$data,true);
+        // //$data['_header']=$this->_CI->load->view('template/header',$data,true);
+        // //$data['_sidebar']=$this->_CI->load->view('template/sidebar',$data,true);
+        // $this->_CI->load->view('/template.php',$data);
+        
         $data['_content']=$this->_CI->load->view($template,$data,true);
         //$data['_header']=$this->_CI->load->view('template/header',$data,true);
-        //$data['_sidebar']=$this->_CI->load->view('template/sidebar',$data,true);
+        $data['_sidebar']=$this->_CI->load->view('template/sidebar',$data,true);
         $this->_CI->load->view('/template.php',$data);
     }
 }
